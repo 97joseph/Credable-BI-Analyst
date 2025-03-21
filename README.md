@@ -37,9 +37,5 @@ Our company aims to expand its reach within the unbanked and under-banked market
 3. Document your findings and provide well-structured recommendations.
 4. Submit a pull request with your contributions.
 
-## License
-This project is licensed under the MIT License.
 
----
-Feel free to customize the BI tool and data sources as needed to deliver a compelling and insightful analysis.
 
