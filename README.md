@@ -1,5 +1,10 @@
 # BI Analyst Case Study: Strategic Lending Acquisition Analysis
 
+<img width="496" alt="image12" src="https://github.com/user-attachments/assets/736a9efc-726f-4746-b7c3-aead9629f29d" />
+<img width="499" alt="image14" src="https://github.com/user-attachments/assets/abdf258e-06c2-4b6f-9656-005d20830645" />
+<img width="512" alt="image11" src="https://github.com/user-attachments/assets/8b35bb72-4ac3-4149-bf59-c6b0ccfe7cbc" />
+
+
 ## Context
 Our company aims to expand its reach within the unbanked and under-banked market by acquiring a strategic lending business. This target company has provided data on their loan disbursements and repayments. Your task is to conduct a comprehensive analysis of this data to evaluate the product's potential and provide actionable recommendations to the leadership team.
 
