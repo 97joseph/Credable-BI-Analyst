@@ -1,8 +1,8 @@
 
 -- SQL notebook for data prepocessing and analysis of the data sets
 -- Input tables: disbursements, repayments
--- Author: Eric Odongo
--- Date  : 20th Mar 2025
+-- Author: Joseph Kibira
+-- Date  : 21th Mar 2025
 
 --Basic explorations of the two given tables
 
