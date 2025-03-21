@@ -1,68 +1,58 @@
-
--- SQL notebook for data prepocessing and analysis of the data sets
+-- SQL notebook for data preprocessing and analysis of the data sets
 -- Input tables: disbursements, repayments
--- Author: Eric Odongo
--- Date  : 20th Mar 2025
+-- Author: Joseph Kibira
+-- Date  : 21st Mar 2025
 
---Basic explorations of the two given tables
+-- Basic explorations of the two given tables
 
+-- Preview the first few rows of the disbursements table
+select * from practice.disbursements limit 5;
 
-
-select * from practice.disbursements  limit 5;
-
+-- Preview the first few rows of the repayments table
 select * from practice.repayments limit 5;
 
---type casting
+-- Data type conversions and initial counts
 
+-- Count the total number of records in the disbursements table
+select count(*) as total_disbursements from practice.disbursements;
 
-select count(*) as customer_count from practice.disbursements;
+-- Count the total number of records in the repayments table
+select count(*) as total_repayments from practice.repayments;
 
-select count(*) as customer_count from practice.repayments;
+-- Detailed exploration of the disbursements table
 
---Let's EXPLORE THE DISBURSEMENTS TABLE
+-- Determine the number of unique loan accounts
+select count(distinct account_num) as unique_loan_accounts from practice.disbursements;
 
--- get the number of distinct loan accounts
+-- Note: There are 26,542 unique loan accounts. Consider removing duplicates for further analysis.
 
-select count(distinct account_num) as unique_accounts from practice.disbursements;
-
--- we have 26,542 unique accounts, we might consider droping duplicate accounts in further analysis
-
--- get the number of distinct customers
-
+-- Determine the number of unique customers
 select count(distinct customer_id) as unique_customers from practice.disbursements;
 
--- we have 2,996 unique customers in the disbursements table
+-- Note: There are 2,996 unique customers in the disbursements table.
 
--- Create a new table for distinct accounts for further analysis
+-- Create a new table with distinct loan accounts for further analysis
 
--- drop table practice.unique_disbursements;
+-- Drop the existing table if it exists
+drop table if exists practice.distinct_disbursements;
 
-create table practice.unique_disbursements as
-select distinct account_num, customer_id, cast(loan_amount as integer) as loan_amount1, 
-                tenure, cast(disb_date as date) as disb_date1, loan_fee
+-- Create a new table with distinct loan accounts
+create table practice.distinct_disbursements as
+select distinct account_num, customer_id, 
+       cast(loan_amount as decimal(10,2)) as loan_amount, 
+       tenure, 
+       cast(disb_date as date) as disbursal_date, 
+       loan_fee
 from practice.disbursements;
 
-select * from practice.unique_disbursements ;
+-- Preview the new table
+select * from practice.distinct_disbursements limit 10;
 
--- Basic Summary statistics
+-- Summary statistics for the distinct disbursements table
 
-select round(avg(loan_amount1), 2) as avg_amount, max(loan_amount1) as max_amount, 
-       min(loan_amount1) as min_amount
-from practice.unique_disbursements;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-- Calculate average, maximum, and minimum loan amounts
+select 
+       round(avg(loan_amount), 2) as average_loan_amount, 
+       max(loan_amount) as maximum_loan_amount, 
+       min(loan_amount) as minimum_loan_amount
+from practice.distinct_disbursements;
