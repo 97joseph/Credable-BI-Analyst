@@ -1,6 +1,5 @@
 # BI Analyst Case Study: Strategic Lending Acquisition Analysis
 
-<<<<<<< HEAD
 =======
 <img width="496" alt="image12" src="https://github.com/user-attachments/assets/736a9efc-726f-4746-b7c3-aead9629f29d" />
 <img width="499" alt="image14" src="https://github.com/user-attachments/assets/abdf258e-06c2-4b6f-9656-005d20830645" />
